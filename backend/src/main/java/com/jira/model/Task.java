@@ -1,4 +1,3 @@
-
 package com.jira.model;
 
 import jakarta.persistence.*;
@@ -6,34 +5,105 @@ import jakarta.persistence.*;
 @Entity
 public class Task {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-private String title;
-private String description;
-private String status;
-private String priority;
-private Integer storyPoints;
-private String assignee;
+    private String title;
 
-public Long getId(){return id;}
+    private String description;
 
-public String getTitle(){return title;}
-public void setTitle(String title){this.title=title;}
+    private String status;
 
-public String getDescription(){return description;}
-public void setDescription(String description){this.description=description;}
+    private String priority;
 
-public String getStatus(){return status;}
-public void setStatus(String status){this.status=status;}
+    private Integer storyPoints;
 
-public String getPriority(){return priority;}
-public void setPriority(String priority){this.priority=priority;}
+    private String assignee;
 
-public Integer getStoryPoints(){return storyPoints;}
-public void setStoryPoints(Integer storyPoints){this.storyPoints=storyPoints;}
+    // NEW
+    private String projectName;
 
-public String getAssignee(){return assignee;}
-public void setAssignee(String assignee){this.assignee=assignee;}
+    // NEW
+    private String dueDate;
+
+    // NEW
+    @Column(length = 2000)
+    private String workReport;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    public Integer getStoryPoints() {
+        return storyPoints;
+    }
+
+    public void setStoryPoints(Integer storyPoints) {
+        this.storyPoints = storyPoints;
+    }
+
+    public String getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(String assignee) {
+        this.assignee = assignee;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getWorkReport() {
+        return workReport;
+    }
+
+    public void setWorkReport(String workReport) {
+        this.workReport = workReport;
+    }
 }

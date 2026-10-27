@@ -1,0 +1,263 @@
+/* =====================================
+   BOARD
+===================================== */
+
+.board{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(330px,1fr));
+
+    gap:24px;
+
+    align-items:flex-start;
+
+    width:100%;
+
+    overflow-x:auto;
+
+    padding-bottom:20px;
+
+}
+
+/* =====================================
+   COLUMN
+===================================== */
+
+.column{
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    min-height:72vh;
+
+    padding:20px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:.25s;
+
+}
+
+.column:hover{
+
+    box-shadow:var(--shadow);
+
+}
+
+.column h4{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+/* =====================================
+   TASK CARD
+===================================== */
+
+.card{
+
+    width:100%;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-left:5px solid var(--primary);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    margin-bottom:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:0 5px 14px rgba(15,23,42,.05);
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.card b{
+
+    display:block;
+
+    font-size:16px;
+
+    color:var(--text);
+
+    margin-bottom:14px;
+
+}
+
+/* =====================================
+   TASK INFO
+===================================== */
+
+.task-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:12px;
+
+}
+
+.task-label{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+.task-value{
+
+    color:var(--text);
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* =====================================
+   STORY POINTS
+===================================== */
+
+.story-box{
+
+    margin-top:14px;
+
+    padding:10px 14px;
+
+    background:#f8fafc;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:13px;
+
+    color:var(--text);
+
+}
+
+/* =====================================
+   PRIORITY BADGES
+===================================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.LOW{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.MEDIUM{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+.HIGH{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+/* =====================================
+   EMPTY COLUMN
+===================================== */
+
+.empty-column{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:1200px){
+
+.board{
+
+    grid-template-columns:repeat(2,minmax(320px,1fr));
+
+}
+
+}
+
+@media(max-width:800px){
+
+.board{
+
+    grid-template-columns:1fr;
+
+}
+
+}

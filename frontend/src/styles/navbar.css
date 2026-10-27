@@ -1,0 +1,382 @@
+/* =========================
+   TOP NAVBAR
+========================= */
+
+.topbar{
+
+    height:72px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:0 26px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:28px;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.topbar-left{
+
+    display:flex;
+    align-items:center;
+
+    gap:28px;
+
+}
+
+.topbar-left h2{
+
+    margin:0;
+
+    font-size:26px;
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.topbar-search{
+
+    width:340px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 16px;
+
+    background:var(--surface-2);
+
+    border:1px solid transparent;
+
+    border-radius:14px;
+
+    transition:var(--transition);
+
+}
+
+.topbar-search:hover{
+
+    border-color:var(--border);
+
+}
+
+.topbar-search:focus-within{
+
+    background:white;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(79,70,229,.08);
+
+}
+
+.topbar-search svg{
+
+    font-size:18px;
+
+    color:var(--muted);
+
+}
+
+.topbar-search input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:14px;
+
+    color:var(--text);
+
+}
+
+.topbar-search input::placeholder{
+
+    color:var(--muted);
+
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.topbar-right{
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+}
+
+/* =========================
+   ICON
+========================= */
+
+.nav-icon{
+
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.nav-icon svg{
+
+    font-size:19px;
+
+    color:var(--text-light);
+
+}
+
+.nav-icon:hover{
+
+    border-color:var(--primary);
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.nav-icon:hover svg{
+
+    color:var(--primary);
+
+}
+
+/* =========================
+   USER
+========================= */
+
+.user-menu{
+
+    position:relative;
+
+}
+
+.user-btn{
+
+    height:48px;
+
+    padding:0 14px;
+
+    border:1px solid var(--border);
+
+    background:white;
+
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.user-btn:hover{
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.user-avatar{
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#6366f1,#4f46e5);
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+    font-weight:700;
+
+    box-shadow:0 8px 20px rgba(79,70,229,.25);
+
+}
+
+.user-btn span{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.user-btn svg:last-child{
+
+    color:var(--muted);
+
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.user-dropdown{
+
+    position:absolute;
+
+    top:58px;
+    right:0;
+
+    width:220px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-lg);
+
+    animation:dropdown .2s ease;
+
+    z-index:999;
+
+}
+
+@keyframes dropdown{
+
+    from{
+
+        opacity:0;
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.drop-item{
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 18px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    color:var(--text-light);
+
+    transition:var(--transition);
+
+}
+
+.drop-item svg{
+
+    font-size:18px;
+
+}
+
+.drop-item:hover{
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+}
+
+.logout{
+
+    color:#ef4444;
+
+}
+
+.logout:hover{
+
+    background:#fef2f2;
+
+    color:#dc2626;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .topbar{
+
+        padding:0 16px;
+
+    }
+
+    .topbar-search{
+
+        display:none;
+
+    }
+
+    .user-btn span{
+
+        display:none;
+
+    }
+
+}

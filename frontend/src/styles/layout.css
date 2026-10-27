@@ -1,0 +1,53 @@
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.main{
+    margin-left:var(--sidebar-width);
+    width:calc(100% - var(--sidebar-width));
+
+    min-height:100vh;
+
+    background:#f4f7fc;
+
+    padding:28px;
+
+    transition:all .30s ease;
+}
+
+.main.shift{
+    margin-left:var(--sidebar-collapse);
+    width:calc(100% - var(--sidebar-collapse));
+}
+
+.page-content{
+    margin-top:24px;
+    animation:fadeIn .25s ease;
+}
+
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+.page-container{
+    width:100%;
+    max-width:1600px;
+    margin:0 auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+.main,
+.main.shift{
+
+    margin-left:0;
+    width:100%;
+    padding:18px;
+
+}
+
+}

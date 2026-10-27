@@ -19,8 +19,27 @@ this.repo=repo;
 }
 
 @GetMapping
-public List<Task> getAll(){
-return repo.findAll();
+public List<Task> getTasks(
+
+        @RequestParam(required = false) String status,
+        @RequestParam(required = false) String priority,
+        @RequestParam(required = false) String assignee,
+        @RequestParam(required = false) String projectName
+) {
+
+    if (status != null)
+        return repo.findByStatus(status);
+
+    if (priority != null)
+        return repo.findByPriority(priority);
+
+    if (assignee != null)
+        return repo.findByAssignee(assignee);
+
+    if (projectName != null)
+        return repo.findByProjectName(projectName);
+
+    return repo.findAll();
 }
 
 @PostMapping
@@ -39,6 +58,9 @@ task.setStatus(t.getStatus());
 task.setPriority(t.getPriority());
 task.setStoryPoints(t.getStoryPoints());
 task.setAssignee(t.getAssignee());
+task.setProjectName(t.getProjectName());
+task.setDueDate(t.getDueDate());
+task.setWorkReport(t.getWorkReport());
 
 return repo.save(task);
 }

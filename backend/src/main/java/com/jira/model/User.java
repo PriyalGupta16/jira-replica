@@ -1,11 +1,6 @@
 package com.jira.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -15,17 +10,45 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String username;
+
     private String password;
-    private String role;
 
-    public User() {}
+    private String fullName;
 
-    public User(String username, String password, String role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
+    @Column(unique = true)
+    private String email;
+
+    private String phone;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @Enumerated(EnumType.STRING)
+    private Department department;
+
+    @Enumerated(EnumType.STRING)
+    private Designation designation;
+
+    private String team;
+
+    private String reportingManager;
+
+    private Integer experience;
+
+    private String skills;
+
+    private String joiningDate;
+
+    private String profilePhoto;
+
+    private Boolean active = true;
+
+    public User() {
     }
+
+    // ---------- Getters & Setters ----------
 
     public Long getId() {
         return id;
@@ -47,11 +70,107 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Designation getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(Designation designation) {
+        this.designation = designation;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public String getReportingManager() {
+        return reportingManager;
+    }
+
+    public void setReportingManager(String reportingManager) {
+        this.reportingManager = reportingManager;
+    }
+
+    public Integer getExperience() {
+        return experience;
+    }
+
+    public void setExperience(Integer experience) {
+        this.experience = experience;
+    }
+
+    public String getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+
+    public String getJoiningDate() {
+        return joiningDate;
+    }
+
+    public void setJoiningDate(String joiningDate) {
+        this.joiningDate = joiningDate;
+    }
+
+    public String getProfilePhoto() {
+        return profilePhoto;
+    }
+
+    public void setProfilePhoto(String profilePhoto) {
+        this.profilePhoto = profilePhoto;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }

@@ -1,0 +1,16 @@
+package com.jira.model;
+
+public enum Designation {
+
+    FRONTEND_DEVELOPER,
+    BACKEND_DEVELOPER,
+    FULLSTACK_DEVELOPER,
+    DEVOPS_ENGINEER,
+    QA_ENGINEER,
+    UI_UX_DESIGNER,
+    ANDROID_DEVELOPER,
+    IOS_DEVELOPER,
+    DATA_ENGINEER,
+    ML_ENGINEER,
+    PRODUCT_MANAGER
+}

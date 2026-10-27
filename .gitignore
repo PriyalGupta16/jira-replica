@@ -1,0 +1,22 @@
+# Java / Maven
+backend/target/
+*.class
+*.jar
+
+# Node.js
+frontend/node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Temporary debugging files
+backend/GenerateHash.java
+backend/GenerateHash.class
+backend/classpath.txt
+backend/reset-password.sql
+
+# IDE files
+.idea/
+.vscode/
